@@ -1,0 +1,55 @@
+.hide {
+  display: none !important; }
+
+body {
+  color: #7d7d7d;
+  font-family: Arial, sans-serif; }
+
+h1 {
+  text-align: center; }
+  h1 small {
+    font-size: 20px;
+    display: block; }
+
+#wrapper {
+  width: 500px;
+  margin: 50px auto; }
+
+.title {
+  margin-bottom: 50px; }
+
+.movie-form {
+  width: 800px;
+  margin: 0 auto; }
+
+input[type='button'] {
+  font-size: 15px; }
+
+ul.generic-toggle {
+  list-style: none; }
+
+.calculate-error {
+  font-size: 20px;
+  color: #9e0823; }
+  .calculate-error img {
+    width: 300px; }
+
+.age .age-details {
+  text-align: center;
+  color: #333333; }
+.age .paige-photo {
+  max-height: 150px;
+  float: right; }
+.age h3 {
+  padding-top: 50px; }
+
+.movie {
+  clear: both;
+  overflow: hidden; }
+  .movie .movie-poster {
+    max-height: 150px; }
+  .movie img {
+    float: left;
+    margin: 20px; }
+  .movie h3 {
+    padding-top: 50px; }

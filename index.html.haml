@@ -1,0 +1,68 @@
+%html
+  %head
+    %title How Old Was...
+    %script(src="http://code.jquery.com/jquery-1.7.min.js" type="text/javascript")
+    %script(src="calculator.js" type="text/javascript")
+    %link(href='style.css' media='screen' rel='stylesheet' type='text/css')
+
+  %body
+    #wrapper
+      .title
+        %h1
+          How Old Was
+          %span.paige-edition
+            Paige
+          %span.generic-edition.hide
+            I
+          When...
+          %small Enter the name of the Movie and Hit "Go"
+
+        %ul.generic-toggle
+          %li.generic
+            %a(href="#") Generic edition
+            %small See how old you were when a movie was released
+          %li.paige.hide
+            %a(href="#") Paige Edition
+            %small See how old Paige was when a movie was released.
+
+      .movie-form
+        .generic-edition.hide
+          What year where you born?
+          %input(type='test' id="year-born" class="numbers-only" maxlength="4" size="4")
+        How old was
+        %span.paige-edition
+          Paige
+        %span.generic-edition.hide
+          I
+        when
+        %input(type="text" id="movie-title")
+        was released.
+        %input(type="button" value="Go" id = "run-calculate")
+
+      .calculate-error.hide
+        %img(src="./images/error.jpg")
+        %p
+          I'm sorry you seemed to have made up a movie or spelled it wrong. This isn't google, figure your shit out.
+
+      .calculate_loading.hide
+        %img(src="./images/loading.gif")
+
+      .calculate-results.hide
+        .movie
+          %img.movie-poster
+          %h3
+            In
+            %span.movie-year
+            when
+            %span.movie-title
+            was released.
+        .age
+          %img.paige-photo
+          %h3.age-details
+            %span.paige-edition
+              Paige was
+            %span.generic-edition.hide
+              You were
+            %span#movie_v_age_results
+
+
