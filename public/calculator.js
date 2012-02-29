@@ -3,7 +3,7 @@
 
   paige_edition = true;
 
-  DEBUG = true;
+  DEBUG = false;
 
   $(document).ready(function() {
     var movie_title;
@@ -74,10 +74,8 @@
           $('.calculate-results').addClass('hide');
         }
         age = json.Year - getYearBorn();
-        console.log(json.Year);
         $('.movie-year').html(json.Year);
         $('.movie-title').html(json.Title);
-        $('.movie-poster').attr('src', json.Poster);
         if (age < 0) {
           results_content = "not even born yet!";
         } else if (age === 0) {

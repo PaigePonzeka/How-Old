@@ -1,5 +1,5 @@
 paige_edition = true
-DEBUG = true
+DEBUG = false
 
 $(document).ready ->
 
@@ -78,11 +78,10 @@ queryMovie=(movie_title)->
         $('.calculate-results').addClass('hide')
 
       age = json.Year - getYearBorn()
-      console.log(json.Year)
       # Post Movie Results
       $('.movie-year').html(json.Year)
       $('.movie-title').html(json.Title)
-      $('.movie-poster').attr('src', json.Poster)
+      #$('.movie-poster').attr('src', json.Poster)
       # Post Age Results
       if ( age < 0)
         results_content = "not even born yet!"
