@@ -1,5 +1,5 @@
 paige_edition = true
-DEBUG = false
+DEBUG = true
 
 $(document).ready ->
 
@@ -67,20 +67,18 @@ queryMovie=(movie_title)->
   full_api_url = "#{imdb_api_url}t=#{movie_title}"
 
   $.ajax
+    type: "GET"
     url: full_api_url
+    dataType: "jsonp"
     cache: false
-    success: (html) ->
-      # TODO check for response error
-
-      json = $.parseJSON(html)
-
+    success: (json) ->
       if(json.Response == "Parse Error")
         $('.calculate-error').removeClass('hide')
         $('.calculate_loading').addClass('hide')
         $('.calculate-results').addClass('hide')
 
       age = json.Year - getYearBorn()
-
+      console.log(json.Year)
       # Post Movie Results
       $('.movie-year').html(json.Year)
       $('.movie-title').html(json.Title)

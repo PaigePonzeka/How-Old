@@ -1,0 +1,5 @@
+A simple web app, build with Coffeescript, haml, and sass and compiled using the stasis gem.
+
+Runs a calculation of my birthday vs movies using a simple imdb api available here: http://imdbapi.com/
+
+Also can be switched to "generic edition" which will run input birth year along with usual data.

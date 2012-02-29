@@ -3,7 +3,7 @@
 
   paige_edition = true;
 
-  DEBUG = false;
+  DEBUG = true;
 
   $(document).ready(function() {
     var movie_title;
@@ -62,17 +62,19 @@
     imdb_api_url = "http://www.imdbapi.com/?";
     full_api_url = "" + imdb_api_url + "t=" + movie_title;
     return $.ajax({
+      type: "GET",
       url: full_api_url,
+      dataType: "jsonp",
       cache: false,
-      success: function(html) {
-        var age, json, results_content;
-        json = $.parseJSON(html);
+      success: function(json) {
+        var age, results_content;
         if (json.Response === "Parse Error") {
           $('.calculate-error').removeClass('hide');
           $('.calculate_loading').addClass('hide');
           $('.calculate-results').addClass('hide');
         }
         age = json.Year - getYearBorn();
+        console.log(json.Year);
         $('.movie-year').html(json.Year);
         $('.movie-title').html(json.Title);
         $('.movie-poster').attr('src', json.Poster);
